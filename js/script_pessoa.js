@@ -32,9 +32,25 @@ const addPessoa = (objPessoa) => {
 
 // função listar pessoas
 const listaPessoa = () => {
-    // Percorrendo o array com a estrutura de repetição foreach
-    pessoas.forEach((elem, i) => {
-        divResult.innerHTML += `${ i + 1} -  ${elem.nome} <br> Idade: ${elem.idade} <br> Renda: R$ ${parseFloat(elem.renda).toFixed(2).replace('.',',')} <br>`
-    })
-}
 
+    divResult.innerHTML = ''
+
+    pessoas.forEach((elem, i) => {
+        divResult.innerHTML += `
+            <div class="item-pessoa">
+                ${i + 1} - ${elem.nome}
+                <br>
+                Idade: ${elem.idade}
+                <br>
+                Renda: R$ ${parseFloat(elem.renda).toFixed(2).replace('.', ',')}
+            </div>
+        `
+    })
+    
+    const btnLimpar = document.querySelector('#btn-limpar')
+
+btnLimpar.addEventListener('click', () => {
+    divResult.innerHTML = ''
+    pessoas.length = 0
+})
+}
