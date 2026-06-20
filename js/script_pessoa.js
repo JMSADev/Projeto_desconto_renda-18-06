@@ -32,9 +32,10 @@ const addPessoa = (objPessoa) => {
 
 // função listar pessoas
 const listaPessoa = () => {
-
+// limpando a div
     divResult.innerHTML = ''
 
+    //percorrendo o array com a estrutura de repetição foreach
     pessoas.forEach((elem, i) => {
         divResult.innerHTML += `
             <div class="item-pessoa">
@@ -46,11 +47,4 @@ const listaPessoa = () => {
             </div>
         `
     })
-    
-    const btnLimpar = document.querySelector('#btn-limpar')
-
-btnLimpar.addEventListener('click', () => {
-    divResult.innerHTML = ''
-    pessoas.length = 0
-})
 }
