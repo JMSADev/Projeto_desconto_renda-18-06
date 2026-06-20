@@ -1,3 +1,5 @@
+import { calculoDesconto } from "./script_calculos.js"
+
 const pessoas = []
 
 const formPessoa = document.querySelector('#form-pessoa')
@@ -43,8 +45,7 @@ const listaPessoa = () => {
                 <br>
                 Idade: ${elem.idade}
                 <br>
-                Renda: R$ ${parseFloat(elem.renda).toFixed(2).replace('.', ',')}
-            </div>
-        `
+                Renda: R$ ${parseFloat(elem.renda).toFixed(2).replace('.', ',')} ${calculoDesconto(elem)}
+            </div>`
     })
 }
